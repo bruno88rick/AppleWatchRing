@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var progress: CGFloat = 1
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            Color.black.edgesIgnoringSafeArea(.all)
+            ActivityRingView(progress: $progress)
+                .fixedSize()
         }
-        .padding()
     }
 }
 
